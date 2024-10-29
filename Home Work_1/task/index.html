@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 1</title>
+</head>
+<body>
+    <div id="app">
+    <p>Задание 1</p>
+    <p>{{ text }}</p>
+    <button @click="flipOver()">Перевернуть</button>
+
+    <p>Задание 2</p>
+    <ul>
+        <li v-for="(item, index) in lists" v-on:click="remove(index)">{{item}}</li>
+    </ul>
+    <button v-on:click="addItemList">Добавить</button>
+    
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"> </script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                text: 'Перевернуть',
+                lists: [
+                    'Элемент списка 1',
+                    'Элемент списка 2',
+                    'Элемент списка 3',
+                ],
+                
+            },
+            methods: {
+                flipOver() {
+                    this.text = this.text.split('').reverse().join('');
+                },
+                addItemList: function () {
+                    this.lists.push("Новый элемент списка");
+                },
+                remove: function (i) {
+                    this.lists.splice(i, 1);
+                },
+            }
+        })
+    </script>
+</body>
+</html>
