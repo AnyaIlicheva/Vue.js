@@ -93,7 +93,7 @@
           'Building',
           'Architecture',
           'Kitchen Planning',
-          'Bedroom'
+          'Bathroom'
         ]
       }
     },
